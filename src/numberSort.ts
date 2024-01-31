@@ -10,4 +10,9 @@
 
 export function sortNumbers(numbers: number[]): number[] {
   // 在此實現函式
+  return numbers.sort(
+    (a:number,b:number):number => a - b // a - b > 0
+  );
 }
+//用匿名函式當排序條件: https://ithelp.ithome.com.tw/articles/10225733
+console.log(sortNumbers([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]));

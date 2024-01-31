@@ -14,4 +14,7 @@
  */
 export function arraySum(numbers: number[]): number {
     // 在此實現函式
+    return numbers.reduce((a: number,b: number)=>a+b, 0);
 }
+console.log(arraySum([]));
+console.log(arraySum([50,60,72,88,33]));//303
