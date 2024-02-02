@@ -20,4 +20,13 @@ interface UrlParts {
 
 export function parseUrl(url: string): UrlParts {
    // 請在此處寫下你的程式碼
+   const ary = url.split('/').filter(Boolean);//可排除布林值為false陣列中的null與空白值
+   const parm: UrlParts = {
+    protocol: ary[0],
+    hostname: ary[1],
+    path: `/${ary[2]}`
+   }
+   return parm;   
 }
+let url = 'https://www.example.com/path';
+console.log(parseUrl(url));

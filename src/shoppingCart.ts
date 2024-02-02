@@ -22,6 +22,7 @@ export function createShoppingCart() {
      */
     function getTotalPrice() {
         // 請在此處寫下你的程式碼
+        return items.map( i => i .price).reduce((sum: number, num: number)=>sum+num, 0);
     }
 
     function getItemCount() {
@@ -39,3 +40,7 @@ export function createShoppingCart() {
         clear
     };
 }
+const shiplost = createShoppingCart();
+shiplost.addItem({id:'11',name:'NN',price:100})
+shiplost.addItem({id:'12',name:'KK',price:200})
+console.log(shiplost.getTotalPrice());

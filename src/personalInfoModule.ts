@@ -23,4 +23,11 @@ export interface PersonalInfo {
 
 export function createPersonalInfo(name: string, age: number, email: string): PersonalInfo {
         // 請在此處寫下你的程式碼
+        let info: PersonalInfo = {
+            name: name,
+            age: age,
+            email: email    
+          }
+        return info;        
 }
+console.log(createPersonalInfo('John Doe', 30, 'john@example.com'));

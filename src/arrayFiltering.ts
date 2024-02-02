@@ -10,4 +10,6 @@
  */
 export function filterEvens(numbers: number[]): number[] {
     // 請在此處寫下你的程式碼
+    return numbers.filter(value => value % 2 === 0); 
 }
+console.log(filterEvens([5, 6, 7, 8]));

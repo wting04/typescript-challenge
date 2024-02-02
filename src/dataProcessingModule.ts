@@ -9,7 +9,11 @@
  */
 export function sortArray(numbers: number[]): number[] {
     // 請在此處寫下你的程式碼
+    return numbers.sort(
+        (a:number,b:number):number => a - b // a - b > 0
+    );    
 }
+console.log(sortArray([3, 1, 4]));
 
 /**
  * 任務：實作一個函式 `filterArray`，過濾數字陣列中符合條件的元素。
@@ -23,7 +27,9 @@ export function sortArray(numbers: number[]): number[] {
  */
 export function filterArray(numbers: number[], predicate: (num: number) => boolean): number[] {
     // 請在此處寫下你的程式碼
+    return numbers.filter(predicate);
 }
+console.log(filterArray([1, 2, 3, 4], num => num % 2 === 0));
 
 /**
  * 任務：實作一個函式 `transformArray`，將數字陣列中的每個元素進行轉換。
@@ -37,4 +43,6 @@ export function filterArray(numbers: number[], predicate: (num: number) => boole
  */
 export function transformArray(numbers: number[], transform: (num: number) => number): number[] {
     // 請在此處寫下你的程式碼
+    return numbers.map(transform);
 }
+console.log(transformArray([1, 2, 3], num => num * 2)); 

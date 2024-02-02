@@ -6,4 +6,7 @@
  */
 export function uniqueElements(array: number[]): number[] {
     // 請在此處寫下你的程式碼
+    return [...new Set(array)]; //ES6 case 
+    //return array.filter((item, index) => array.indexOf(item) === index); //回傳判斷結果為true的新陣列
 }
+console.log(uniqueElements([1, 2, 2, 3, 4, 4, 4]));

@@ -6,4 +6,20 @@
  */
 
 // 請在下方寫下你的程式碼
+let requsetURL = 'https://jsonplaceholder.typicode.com/todos/1';
 
+export async function fetchData(url: string): Promise<number> {
+    return await new Promise((resolve, reject)=> {
+      const req = new XMLHttpRequest();
+      req.open('GET', url, true);
+      req.onload = () => {
+        if (req.status !== 200) reject('Error!')
+        resolve(JSON.parse(req.response));        
+      }
+      req.send();
+    });
+  
+  }
+//REF: Promise
+//https://www.casper.tw/development/2020/02/16/all-new-promise/
+console.log(fetchData(requsetURL));

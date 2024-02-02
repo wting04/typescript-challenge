@@ -9,7 +9,9 @@
  */
 export function formatDate(date: Date): string {
     // 請在此處寫下你的程式碼
+    return date.toISOString().split('T')[0];
 }
+console.log(formatDate(new Date('2023-01-01')));
 
 /**
  * 任務：實作一個函式 `roundNumber`，將數字四捨五入到最接近的整數。
@@ -22,4 +24,6 @@ export function formatDate(date: Date): string {
  */
 export function roundNumber(num: number): number {
     // 請在此處寫下你的程式碼
+    return Math.round(num);
 }
+console.log(roundNumber(1.5));
