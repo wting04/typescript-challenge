@@ -14,4 +14,18 @@
  */
 export function createObjectAccessor<T>(obj: T) {
     // 請在此處寫下你的程式碼
+    //泛型格式參考
+    // function get<T>(option: Option<T>) {
+    //   return option.value;
+    // }
+ 
+    const get = <K extends keyof T>(property: K) => obj[property];
+    const set = <K extends keyof T>(property: K, value: T[K]) => {
+    return obj[property] = value
+    }
+
+    return {get, set}    
 }
+const obj = { item: 18, soldout: false };
+const stock = createObjectAccessor(obj);
+console.log(stock.get('item'));
